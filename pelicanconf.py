@@ -18,10 +18,12 @@ STATIC_PATHS = ['images', 'icons']
 
 
 # Blogroll
+"""
 LINKS = (
     ("About", "https://www.linkedin.com/in/noahavis13/"),
     ("Contact", "https://github.com/avisnoah13")
 )
+"""
 
 # Social widget
 SOCIAL = (
