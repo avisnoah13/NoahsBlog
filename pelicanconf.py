@@ -31,6 +31,13 @@ SOCIAL = (
     ('linkedin', 'https://linkedin.com/in/noahavis13')
 )
 
+DEFAULT_CATEGORY = 'Blog'
+DISPLAY_CATEGORIES_ON_MENU = True
+
+# Only show non-book categories on the homepage
+ARTICLE_EXCLUDES = ['books']
+
+
 
 DEFAULT_PAGINATION = False
 
