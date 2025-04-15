@@ -41,9 +41,7 @@
   <meta property="og:locale" content="en_US"/>
   <meta property="og:url" content="https://avisnoah13.github.io/NoahsBlog"/>
 
-
-
-  <title>Noah's Blog &ndash; Reading List</title>
+  <title>Noah's Blog</title>
 
 
 </head>
@@ -110,53 +108,15 @@
   <main>
 
 
-<article class="single">
-  <header>
-    
-    <h1 id="reading">Reading List</h1>
-  </header>
-  <div>
-<h1>📚 Engineering Reading List</h1>
-<style>
-.book-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-.book-item {
-  text-align: center;
-}
-.book-item img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease;
-}
-.book-item img:hover {
-  transform: scale(1.05);
-}
-.book-title {
-  margin-top: 0.5rem;
-  font-weight: bold;
-  font-size: 1rem;
-}
-</style>
-
+<h1>Reading List</h1>
 <div class="book-grid">
-  {% for article in articles %}
-    {% if article.category == "Reading List" %}
       <div class="book-item">
-        <a href="{{ SITEURL }}/{{ article.url }}">
-          <img src="{{ SITEURL }}/{{ article.metadata.Book_Cover }}" alt="{{ article.title }} cover">
-          <div class="book-title">{{ article.title }}</div>
+        <a href="https://avisnoah13.github.io/NoahsBlog/the-art-of-electronics.html">
+          <img src="https://avisnoah13.github.io/NoahsBlog/" alt="The Art of Electronics cover">
+          <div class="book-title">The Art of Electronics</div>
         </a>
       </div>
-    {% endif %}
-  {% endfor %}
-</div>  </div>
-</article>
+</div>
 
 <footer>
 <p>&copy; 2025 Noah Avis</p>
