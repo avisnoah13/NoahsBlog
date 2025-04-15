@@ -1,6 +1,8 @@
 Title: Reading List
 Slug: reading
-Template: jinja2
+Save_as: pages/reading.html
+Template: readinglist
+
 
 
 # 📚 Engineering Reading List
@@ -31,18 +33,4 @@ Template: jinja2
   font-size: 1rem;
 }
 </style>
-
-<div class="book-grid">
-  {% for article in articles %}
-    {% if article.category == "Reading List" %}
-      <div class="book-item">
-        <a href="{{ SITEURL }}/{{ article.url }}">
-          <img src="{{ SITEURL }}/{{ article.metadata.Book_Cover }}" alt="{{ article.title }} cover">
-          <div class="book-title">{{ article.title }}</div>
-        </a>
-      </div>
-    {% endif %}
-  {% endfor %}
-</div>
-
 
