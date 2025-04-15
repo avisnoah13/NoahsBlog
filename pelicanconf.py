@@ -36,6 +36,9 @@ DEFAULT_PAGINATION = False
 THEME = "./pelican-themes/Flex"
 FAVICON = "/icons/favicon.ico"
 
+DISPLAY_PAGES_ON_MENU = True
+
+
 #Sidebar Flex Setting
 SITETITLE = ("Noah Avis")
 SITESUBTITLE = ("Electrical Engineering Student @ Princeton University")
