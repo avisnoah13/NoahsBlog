@@ -1,6 +1,5 @@
 Title: Reading List
 Slug: reading
-Save_as: reading.html
 
 # 📚 Engineering Reading List
 
