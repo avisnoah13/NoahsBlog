@@ -37,6 +37,8 @@ THEME = "./pelican-themes/Flex"
 FAVICON = "/icons/favicon.ico"
 
 DISPLAY_PAGES_ON_MENU = True
+PAGE_PATHS = ['pages']
+
 
 
 #Sidebar Flex Setting
