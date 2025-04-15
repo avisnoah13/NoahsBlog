@@ -32,5 +32,13 @@ DEFAULT_PAGINATION = False
 #Set Theme
 THEME = "./pelican-themes/Flex"
 
+#Sidebar Flex Setting
+SITETITLE = ("Noah Avis")
+SITESUBTITLE = ("Electrical Engineering Student @ Princeton University")
+SITEDESCRIPTION = ("Personal blog for Noah Avis listing engineering projects and reading list")
+COPYRIGHT_NAME = "Noah Avis"
+COPYRIGHT_YEAR	= "2025"
+
+
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
