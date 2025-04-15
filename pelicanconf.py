@@ -31,6 +31,7 @@ DEFAULT_PAGINATION = False
 
 #Set Theme
 THEME = "./pelican-themes/Flex"
+FAVICON = "./content/images/icons/Heading.png"
 
 #Sidebar Flex Setting
 SITETITLE = ("Noah Avis")
