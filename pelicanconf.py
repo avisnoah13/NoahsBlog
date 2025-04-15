@@ -43,7 +43,7 @@ DEFAULT_PAGINATION = False
 
 #Set Theme
 THEME = "./pelican-themes/Flex"
-FAVICON = "/icons/favicon.ico"
+FAVICON = "https://avisnoah13.github.io/NoahsBlog/icons/favicon.ico"
 
 DISPLAY_PAGES_ON_MENU = True
 PAGE_PATHS = ['pages']
