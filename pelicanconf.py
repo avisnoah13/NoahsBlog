@@ -34,8 +34,6 @@ SOCIAL = (
 DEFAULT_CATEGORY = 'Blog'
 DISPLAY_CATEGORIES_ON_MENU = True
 
-# Only show non-book categories on the homepage
-ARTICLE_EXCLUDES = ['books']
 
 
 
