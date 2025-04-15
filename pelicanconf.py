@@ -14,6 +14,9 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+STATIC_PATHS = ['images', 'icons']
+
+
 # Blogroll
 LINKS = (
     ("About", "https://www.linkedin.com/in/noahavis13/"),
@@ -31,7 +34,7 @@ DEFAULT_PAGINATION = False
 
 #Set Theme
 THEME = "./pelican-themes/Flex"
-FAVICON = "/Users/noah.avis/Desktop/Programming/Personal Blog/content/images/icons/favicon.ico"
+FAVICON = "/icons/favicon.ico"
 
 #Sidebar Flex Setting
 SITETITLE = ("Noah Avis")
