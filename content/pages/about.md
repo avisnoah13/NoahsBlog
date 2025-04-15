@@ -1,6 +1,5 @@
 Title: About Me
 Date: 2025-04-14
-Save_as: about.html
 Slug: about
 Author: Noah Avis
 
