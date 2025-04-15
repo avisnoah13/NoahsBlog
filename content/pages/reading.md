@@ -1,5 +1,7 @@
 Title: Reading List
 Slug: reading
+Template: jinja2
+
 
 # 📚 Engineering Reading List
 
