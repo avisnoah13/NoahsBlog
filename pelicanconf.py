@@ -33,6 +33,8 @@ SOCIAL = (
 
 DEFAULT_CATEGORY = 'Blog'
 DISPLAY_CATEGORIES_ON_MENU = True
+HIDE_FROM_INDEX = ["Reading List"]
+
 
 
 
