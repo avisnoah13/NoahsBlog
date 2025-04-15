@@ -31,15 +31,16 @@ Slug: reading
 </style>
 
 <div class="book-grid">
-{% for article in articles %}
-  {% if article.category == "Reading List" %}
-    <div class="book-item">
-      <a href="{{ SITEURL }}/{{ article.url }}">
-        <img src="{{ SITEURL }}/{{ article.metadata.Book_Cover }}" alt="{{ article.title }} cover">
-        <div class="book-title">{{ article.title }}</div>
-      </a>
-    </div>
-  {% endif %}
-{% endfor %}
+  {% for article in articles %}
+    {% if article.category == "Reading List" %}
+      <div class="book-item">
+        <a href="{{ SITEURL }}/{{ article.url }}">
+          <img src="{{ SITEURL }}/{{ article.metadata.Book_Cover }}" alt="{{ article.title }} cover">
+          <div class="book-title">{{ article.title }}</div>
+        </a>
+      </div>
+    {% endif %}
+  {% endfor %}
 </div>
+
 
