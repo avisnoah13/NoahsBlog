@@ -32,16 +32,24 @@
 
  
 
-    <meta name="author" content="Noah Avis" />
-    <meta name="description" content="Personal blog for Noah Avis listing engineering projects and reading list" />
-  <meta property="og:site_name" content="Noah's Blog"/>
-  <meta property="og:type" content="blog"/>
-  <meta property="og:title" content="Noah's Blog"/>
-  <meta property="og:description" content="Personal blog for Noah Avis listing engineering projects and reading list"/>
-  <meta property="og:locale" content="en_US"/>
-  <meta property="og:url" content="https://avisnoah13.github.io/NoahsBlog"/>
+<meta name="author" content="Noah Avis" />
+<meta name="description" content="Combines EMI theory and practical design tips and examples to effectively design PCB&#39;s that pass EMI testing with strong signal integrity." />
+<meta name="keywords" content="">
 
-  <title>Noah's Blog &ndash; Categories</title>
+
+  <meta property="og:site_name" content="Noah's Blog"/>
+  <meta property="og:title" content="PCB Design for Real World EMI Control"/>
+  <meta property="og:description" content="Combines EMI theory and practical design tips and examples to effectively design PCB&#39;s that pass EMI testing with strong signal integrity."/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="https://avisnoah13.github.io/NoahsBlog/pcb-design-emi.html"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2025-04-16 00:00:00-05:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="https://avisnoah13.github.io/NoahsBlog/author/noah-avis.html">
+  <meta property="article:section" content="Reading List"/>
+  <meta property="og:image" content="">
+
+  <title>Noah's Blog &ndash; PCB Design for Real World EMI Control</title>
 
 
 </head>
@@ -110,18 +118,40 @@
 
 <article class="single">
   <header>
-    <h1 id="categories">Categories</h1>
+      
+    <h1 id="pcb-design-emi">PCB Design for Real World EMI Control</h1>
+    <p>
+      Posted on Wed 16 April 2025 in <a href="https://avisnoah13.github.io/NoahsBlog/category/reading-list.html">Reading List</a>
+
+    </p>
   </header>
+
+
   <div>
-    <ul class="list">
-      <li>
-        <a href="https://avisnoah13.github.io/NoahsBlog/category/reading-list.html">Reading List</a> (2)
-      </li>
-      <li>
-        <a href="https://avisnoah13.github.io/NoahsBlog/category/review.html">Review</a> (1)
-      </li>
-    </ul>
+    <p><img alt="Book Cover" src="https://avisnoah13.github.io/NoahsBlog/images/book-covers/pcbdesignEMI.jpg"></p>
+<p>“Rather than depend on luck and many hours spent in the EMC laboratory trying various circuit combinations, up front design and consideration of the parasitic circuit elements, the possible resonances, and the overall equivalent circuits will help the designer be successful the first time” (Page 21)</p>
+<p><strong>Why I Read This</strong>
+I was designing a flight computer PCB following routing guidelines and common practices for PCB Design, but I wanted to know exactly why I was doing these things. So, I found this book that provides a theoretical backing to why these common practices exist so I can understand what's really going on to make informed design tradeoffs.</p>
+<p><strong>What I Learned</strong>
+Two Coupling mechanisms: Electric Field and magnetic Field
+ - Electric Field: Occurs through displacement current which has a parasitic capacitance effect
+ - Magnetic Field: Occurs through current and inductance</p>
+<p>These get dangerous when they offer a lower impedance return path then the intended one</p>
+<p>High frequencies radiate more than lower frequencies. Often it is not the fundamental frequency that is the problem, it is the higher harmonics.</p>
+<p>Inductance
+ - At high frequencies, inductance dominates
+ - Lots of formulas to calculate inductance of different geometries</p>
   </div>
+  <div class="tag-cloud">
+    <p>
+    </p>
+  </div>
+
+
+
+
+
+
 </article>
 
 <footer>
