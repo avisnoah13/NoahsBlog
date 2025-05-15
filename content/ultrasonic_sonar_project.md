@@ -1,8 +1,7 @@
 Title: Ultrasonic Sonar Project
 Date: 2025-5-15 2:00
 Category: Project
-
-<!-- PELICAN_END_SUMMARY -->
+summary: Ultrasonic sonar system using an ESP32 and custom low-level circuitry
 
 ## Overview
 
