@@ -2,8 +2,7 @@ Title: Ultrasonic Sonar Project
 Date: 2025-5-15 2:00
 Category: Project
 
-
-# Ultrasonic Sonar Sensor
+<!-- PELICAN_END_SUMMARY -->
 
 ## Overview
 
@@ -31,3 +30,10 @@ I built an ultrasonic sonar system using an ESP32 and custom circuitry. The syst
 ## What I Took Away
 
 This project strengthened my understanding of both analog signal design and embedded systems. From carefully creating and tuning op-amp circuits to writing low-level ESP32 code, it brought together theory and hands-on problem solving. 
+
+## Detailed Writeup
+This project was part of a final project for my circuits class, so here is a detailed writeup created by me and my partner:
+[📄 View the full PDF report](images/ultrasonic-sensor/ECE%20Final%20Project.pdf)
+
+
+
