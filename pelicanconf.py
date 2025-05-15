@@ -46,7 +46,7 @@ THEME = "./pelican-themes/Flex"
 FAVICON = "https://avisnoah13.github.io/NoahsBlog/icons/favicon.ico"
 
 DISPLAY_PAGES_ON_MENU = True
-DISPLAY_SUMMARY_ON_INDEX = False
+DISPLAY_CONTENT_ON_INDEX = False
 PAGE_PATHS = ['pages']
 
 
