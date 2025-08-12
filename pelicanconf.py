@@ -1,6 +1,6 @@
 AUTHOR = 'Noah Avis'
 SITENAME = "Noah's Blog"
-SITEURL = "https://avisnoah13.github.io/NoahsBlog/"
+SITEURL = "https://www.noahavis.com"
 PATH = "content"
 
 TIMEZONE = 'EST'

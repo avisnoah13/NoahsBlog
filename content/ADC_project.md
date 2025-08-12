@@ -3,8 +3,6 @@ Date: 2025-6-25 2:00
 Category: Project
 summary: Building a circuit to teach myself how a flash ADC works
 
-# **Resurrecting an old ADC - Motorola MC10319**
-
 ### Description:
 
 The Motorola MC10319 was a high speed parallel 8-bit flash ADC developed in the 1990s. I could not find direct examples of what this chip was used for online, but the datasheet claims the chip was designed for video broadcast, radar processing, and video display. In my case, this chip was taken out of a broken oscilloscope. A PhD student gave me this chip and told me that I would learn a lot about electronics on my journey to making it function again. He was right. 
