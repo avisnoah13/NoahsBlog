@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Noah's Blog - Reading List</title><link href="https://www.noahavis.com/" rel="alternate"></link><link href="https://www.noahavis.com/feeds/reading-list.atom.xml" rel="self"></link><id>https://www.noahavis.com/</id><updated>2025-04-16T00:00:00-05:00</updated><subtitle>Electrical Engineering Student @ Princeton University</subtitle><entry><title>PCB Design for Real World EMI Control</title><link href="https://www.noahavis.com/pcb-design-emi.html" rel="alternate"></link><published>2025-04-16T00:00:00-05:00</published><updated>2025-04-16T00:00:00-05:00</updated><author><name>Noah Avis</name></author><id>tag:www.noahavis.com,2025-04-16:/pcb-design-emi.html</id><summary type="html">&lt;p&gt;Combines EMI theory and practical design tips and examples to effectively design PCB's that pass EMI testing with strong signal integrity.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Book Cover" src="https://www.noahavis.com/images/book-covers/pcbdesignEMI.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;“Rather than depend on luck and many hours spent in the EMC laboratory trying various circuit combinations, up front design and consideration of the parasitic circuit elements, the possible resonances, and the overall equivalent circuits will help the designer be successful the first time” (Page 21)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Why I Read This&lt;/strong&gt;
+I was designing a flight computer PCB following routing guidelines and common practices for PCB Design, but I wanted to know exactly why I was doing these things. So, I found this book that provides a theoretical backing to why these common practices exist so I can understand what's really going on to make informed design tradeoffs.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What I Learned&lt;/strong&gt;
+Two Coupling mechanisms: Electric Field and magnetic Field
+ - Electric Field: Occurs through displacement current which has a parasitic capacitance effect
+ - Magnetic Field: Occurs through current and inductance&lt;/p&gt;
+&lt;p&gt;These get dangerous when they offer a lower impedance return path then the intended one&lt;/p&gt;
+&lt;p&gt;High frequencies radiate more than lower frequencies. Often it is not the fundamental frequency that is the problem, it is the higher harmonics.&lt;/p&gt;
+&lt;p&gt;Inductance
+ - At high frequencies, inductance dominates
+ - Lots of formulas to calculate inductance of different geometries&lt;/p&gt;</content><category term="Reading List"></category></entry></feed>
