@@ -1,7 +1,7 @@
 Title: Silcon VLSI Technology
 Date: 2025-04-16
 Category: Reading List
-Slug: pcb-design-emi
+Slug: plummer-vlsi
 Book_Cover: images/book-covers/vlsiTechCover.png
 Summary: Comprehensive overview of silicon electronic devices including the physics behind how they function, manufacturing techniques, and deep dives into semiconductor processes such as lithography, etching, deposition, and thin film processing.
 
