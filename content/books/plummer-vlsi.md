@@ -1,5 +1,5 @@
 Title: Silcon VLSI Technology
-Date: 2025-04-16
+Date: 2025-09-29
 Category: Reading List
 Slug: plummer-vlsi
 Book_Cover: images/book-covers/vlsiTechCover.png
