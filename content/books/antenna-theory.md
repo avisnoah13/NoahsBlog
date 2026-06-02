@@ -8,8 +8,6 @@ Summary: Covers fundamental theory, mathematical analysis, and practical design 
 
 ![Book Cover]({static}/images/book-covers/antennatheorycover.jpg)
 
-“Rather than depend on luck and many hours spent in the EMC laboratory trying various circuit combinations, up front design and consideration of the parasitic circuit elements, the possible resonances, and the overall equivalent circuits will help the designer be successful the first time” (Page 21)
-
 **Why I Read This**
 Many of my learning excursions come from long waits in the airport, because
 as an engineer, it is impossible to be bored at an airport. My desire to
