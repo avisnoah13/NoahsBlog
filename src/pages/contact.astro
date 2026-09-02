@@ -1,28 +1,63 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const icons: Record<string, string> = {
+  email: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>`,
+  linkedin: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.11 20.45H3.56V9h3.55v11.45Z"/></svg>`,
+  github: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.11-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.03 1.75 2.69 1.25 3.34.96.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.73 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.58.23 2.75.11 3.04.74.8 1.18 1.83 1.18 3.09 0 4.42-2.7 5.4-5.26 5.68.41.36.78 1.08.78 2.18 0 1.57-.01 2.84-.01 3.23 0 .31.2.66.79.55A10.52 10.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>`,
+};
+
+const contactLinks = [
+  {
+    label: 'Email',
+    value: 'na7213@princeton.edu',
+    href: 'mailto:na7213@princeton.edu',
+    icon: 'email',
+  },
+  {
+    label: 'LinkedIn',
+    value: 'linkedin.com/in/noahavis13',
+    href: 'https://linkedin.com/in/noahavis13',
+    icon: 'linkedin',
+  },
+  {
+    label: 'GitHub',
+    value: 'github.com/avisnoah13',
+    href: 'https://github.com/avisnoah13',
+    icon: 'github',
+  },
+];
 ---
 
 <BaseLayout title="Contact" description="Get in touch with Noah Avis.">
   <article class="prose-wrap prose contact">
     <p class="eyebrow">Contact</p>
     <h1>Contact</h1>
-    <p>Feel free to reach out to me through any of the channels below:</p>
-    <ul>
-      <li>
-        📧 <strong>Email:</strong>
-        <a href="mailto:na7213@princeton.edu">na7213@princeton.edu</a>
-      </li>
-      <li>
-        💼 <strong>LinkedIn:</strong>
-        <a href="https://linkedin.com/in/noahavis13" target="_blank" rel="noreferrer">
-          linkedin.com/in/noahavis13
-        </a>
-      </li>
-    </ul>
-    <p>
-      If you'd like to work together, ask a question, or learn more about
-      me, I am happy to talk.
+    <p class="contact-intro">
+      I'm always happy to talk about a project, answer a question, or
+      hear about an opportunity to work together. Please reach out
+      through any of the channels below.
     </p>
+    <ul class="contact-grid">
+      {
+        contactLinks.map((link) => (
+          <li>
+            <a
+              class="contact-card"
+              href={link.href}
+              target={link.href.startsWith('http') ? '_blank' : undefined}
+              rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
+            >
+              <span class="contact-icon" set:html={icons[link.icon]} />
+              <span class="contact-text">
+                <span class="contact-label">{link.label}</span>
+                <span class="contact-value">{link.value}</span>
+              </span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
   </article>
 </BaseLayout>
 
@@ -31,12 +66,73 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     padding-block: var(--space-6) var(--space-8);
   }
 
-  .contact ul {
-    padding-left: 0;
+  .contact-intro {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-lg);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-4);
+    padding: 0;
+    margin: var(--space-5) 0 0;
     list-style: none;
   }
 
-  .contact li {
-    margin-bottom: var(--space-2);
+  .contact-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    height: 100%;
+    padding: var(--space-4);
+    border-radius: var(--radius);
+    border: 1px solid var(--color-border);
+    background: var(--color-bg-elevated);
+    box-shadow: var(--shadow-card);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.25s ease, box-shadow 0.25s ease,
+      border-color 0.25s ease;
+  }
+
+  .contact-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+    border-color: var(--color-accent);
+  }
+
+  .contact-icon {
+    display: flex;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: var(--color-text-muted);
+    transition: color 0.25s ease;
+  }
+
+  .contact-icon :global(svg) {
+    width: 100%;
+    height: 100%;
+  }
+
+  .contact-card:hover .contact-icon {
+    color: var(--color-accent);
+  }
+
+  .contact-text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .contact-label {
+    font-weight: 600;
+  }
+
+  .contact-value {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    overflow-wrap: anywhere;
   }
 </style>
