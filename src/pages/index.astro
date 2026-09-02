@@ -1,7 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PostCard from '../components/PostCard.astro';
+import princetonLogo from '../assets/princeton-logo.svg';
 
 const posts = (await getCollection('posts')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
@@ -10,11 +12,23 @@ const posts = (await getCollection('posts')).sort(
 
 <BaseLayout title="Noah's Blog">
   <section class="wrap hero">
-    <p class="eyebrow">Noah Avis</p>
-    <h1>Electrical engineering, one project at a time.</h1>
+    <h1>Noah Avis</h1>
+    <div class="credentials">
+      <div class="credentials-logo">
+        <Image src={princetonLogo} alt="Princeton University" />
+      </div>
+      <div class="credentials-text">
+        <p class="credentials-school">Princeton University</p>
+        <p class="credentials-degree">
+          B.S.E. Electrical and Computer Engineering
+        </p>
+      </div>
+    </div>
     <p class="hero-description">
-      Princeton EE student writing up hardware projects, reverse-engineering
-      old chips, and documenting what I'm learning along the way.
+      I am a curious learner who likes hard problems. Currently
+      researching reinforcement learning control for dual active
+      bridge (DAB) and cycloconverters with Princeton PowerLab and
+      spinning wafers with the Micro/Nanofabrication Center.
     </p>
   </section>
 
@@ -29,6 +43,53 @@ const posts = (await getCollection('posts')).sort(
   .hero {
     padding-block: var(--space-7) var(--space-6);
     max-width: 760px;
+  }
+
+  .credentials {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-block: var(--space-4);
+  }
+
+  .credentials-logo {
+    height: 3.75rem;
+    border-radius: 4px;
+  }
+
+  .credentials-logo :global(img) {
+    display: block;
+    width: auto;
+    height: 100%;
+  }
+
+  :root[data-theme='dark'] .credentials-logo {
+    background: #fff;
+    padding: var(--space-1);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) .credentials-logo {
+      background: #fff;
+      padding: var(--space-1);
+    }
+  }
+
+  .credentials-text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .credentials-school {
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .credentials-degree {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    margin: 0;
   }
 
   .hero-description {
