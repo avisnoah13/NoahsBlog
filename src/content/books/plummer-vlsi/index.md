@@ -3,7 +3,7 @@ title: "Silicon VLSI Technology"
 date: 2025-09-29
 summary: "Comprehensive overview of silicon devices — the physics behind how they work, and semiconductor manufacturing processes like lithography, etching, deposition, and thin film processing."
 cover: ./cover.png
-status: in-progress
+status: finished
 ---
 
 ## Why I Read This
