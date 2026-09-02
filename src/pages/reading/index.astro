@@ -1,0 +1,43 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BookCard from '../../components/BookCard.astro';
+
+const books = (await getCollection('books')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+
+<BaseLayout title="Reading" description="Books Noah Avis has been reading.">
+  <section class="wrap hero">
+    <p class="eyebrow">Reading List</p>
+    <h1>What I've been reading</h1>
+    <p class="hero-description">
+      Books that shaped how I think about electronics, semiconductors, and
+      the engineering behind them.
+    </p>
+  </section>
+
+  <section class="wrap">
+    <ul class="card-grid books-grid">
+      {books.map((book) => <BookCard book={book} />)}
+    </ul>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding-block: var(--space-7) var(--space-6);
+    max-width: 760px;
+  }
+
+  .hero-description {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-lg);
+    max-width: 56ch;
+  }
+
+  .books-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+</style>

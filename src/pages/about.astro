@@ -1,0 +1,34 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import workshopPhoto from '../assets/about-workshop.png';
+---
+
+<BaseLayout
+  title="About"
+  description="Electrical Engineering Student @ Princeton University"
+>
+  <article class="prose-wrap prose about">
+    <p class="eyebrow">About</p>
+    <h1>About Me</h1>
+    <Image src={workshopPhoto} alt="Working on electronics at my bench" />
+    <p>
+      My name is Noah, and I am a Princeton student passionate about
+      hardware and electronics. I hope to work in computer chip design,
+      defense technology, or power electronics, and these projects are to
+      fine tune my interest and develop my skills.
+    </p>
+    <p>
+      This blog is where I document projects, thoughts, and cool
+      information I'm learning. Most of the posts are going to deal with
+      electronics, but I may also write about programming or mechanical
+      projects. I do not sell any of my projects.
+    </p>
+  </article>
+</BaseLayout>
+
+<style>
+  .about {
+    padding-block: var(--space-6) var(--space-8);
+  }
+</style>

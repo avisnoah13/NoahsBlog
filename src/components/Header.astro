@@ -1,0 +1,115 @@
+---
+import ThemeToggle from './ThemeToggle.tsx';
+
+const navItems = [
+  { label: 'Projects', href: '/' },
+  { label: 'Reading', href: '/reading/' },
+  { label: 'About', href: '/about/' },
+  { label: 'Contact', href: '/contact/' },
+];
+
+const path = Astro.url.pathname;
+---
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="/" class="wordmark">Noah Avis</a>
+    <nav aria-label="Primary">
+      <ul>
+        {
+          navItems.map((item) => {
+            const isActive =
+              item.href === '/' ? path === '/' : path.startsWith(item.href);
+            return (
+              <li>
+                <a href={item.href} aria-current={isActive ? 'page' : undefined}>
+                  {item.label}
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+      <ThemeToggle client:load />
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    background: var(--color-bg);
+    z-index: 10;
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: var(--space-3);
+  }
+
+  .wordmark {
+    font-weight: 600;
+    font-size: var(--font-size-lg);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-5);
+  }
+
+  nav ul {
+    display: flex;
+    gap: var(--space-4);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+  }
+
+  nav a:hover,
+  nav a[aria-current='page'] {
+    color: var(--color-text);
+  }
+
+  @media (max-width: 560px) {
+    nav ul {
+      gap: var(--space-3);
+    }
+    .wordmark {
+      font-size: var(--font-size-base);
+    }
+  }
+</style>
+
+<style is:global>
+  .theme-toggle {
+    background: none;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  .theme-toggle:hover {
+    border-color: var(--color-accent);
+  }
+</style>

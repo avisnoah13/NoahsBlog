@@ -1,0 +1,57 @@
+---
+import { getCollection, render } from 'astro:content';
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Badge from '../../components/Badge.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const dateLabel = post.data.date.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<BaseLayout title={post.data.title} description={post.data.summary}>
+  <article class="prose-wrap prose">
+    <p class="eyebrow">{dateLabel}</p>
+    {post.data.sponsor && (
+      <Badge variant="muted">
+        Sponsored by
+        {post.data.sponsor.url ? (
+          <a href={post.data.sponsor.url} target="_blank" rel="noreferrer">
+            {post.data.sponsor.name}
+          </a>
+        ) : (
+          post.data.sponsor.name
+        )}
+      </Badge>
+    )}
+    <h1>{post.data.title}</h1>
+    {post.data.heroImage && (
+      <Image
+        src={post.data.heroImage}
+        alt=""
+        width={960}
+        height={640}
+        transition:name={`hero-${post.id}`}
+      />
+    )}
+    <Content />
+  </article>
+</BaseLayout>
+
+<style>
+  article {
+    padding-block: var(--space-6) var(--space-8);
+  }
+</style>

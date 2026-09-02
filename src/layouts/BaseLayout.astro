@@ -1,0 +1,45 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = "Personal blog for Noah Avis listing engineering projects and reading list.",
+} = Astro.props;
+
+const pageTitle = title === "Noah's Blog" ? title : `${title} · Noah's Blog`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <meta name="description" content={description} />
+    <title>{pageTitle}</title>
+    <script is:inline>
+      (function () {
+        var stored = localStorage.getItem('theme');
+        var theme =
+          stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+    <ClientRouter />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

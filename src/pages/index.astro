@@ -1,0 +1,39 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostCard from '../components/PostCard.astro';
+
+const posts = (await getCollection('posts')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+
+<BaseLayout title="Noah's Blog">
+  <section class="wrap hero">
+    <p class="eyebrow">Noah Avis</p>
+    <h1>Electrical engineering, one project at a time.</h1>
+    <p class="hero-description">
+      Princeton EE student writing up hardware projects, reverse-engineering
+      old chips, and documenting what I'm learning along the way.
+    </p>
+  </section>
+
+  <section class="wrap">
+    <ul class="card-grid">
+      {posts.map((post) => <PostCard post={post} />)}
+    </ul>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding-block: var(--space-7) var(--space-6);
+    max-width: 760px;
+  }
+
+  .hero-description {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-lg);
+    max-width: 56ch;
+  }
+</style>

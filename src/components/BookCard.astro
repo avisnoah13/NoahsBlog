@@ -1,0 +1,85 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import Badge from './Badge.astro';
+
+interface Props {
+  book: CollectionEntry<'books'>;
+}
+
+const { book } = Astro.props;
+---
+
+<li class="book-card">
+  <a href={`/reading/${book.id}/`} class="book-card-link">
+    <div class="book-card-cover">
+      <Image
+        src={book.data.cover}
+        alt=""
+        width={320}
+        height={480}
+        transition:name={`cover-${book.id}`}
+      />
+      {book.data.status === 'in-progress' && (
+        <span class="book-card-badge">
+          <Badge>In Progress</Badge>
+        </span>
+      )}
+    </div>
+    <div class="book-card-body">
+      <h3>{book.data.title}</h3>
+    </div>
+  </a>
+</li>
+
+<style>
+  .book-card {
+    list-style: none;
+  }
+
+  .book-card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.25s ease;
+  }
+
+  .book-card-link:hover {
+    transform: translateY(-4px);
+  }
+
+  .book-card-cover {
+    position: relative;
+    aspect-ratio: 2 / 3;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    background: var(--color-border);
+  }
+
+  .book-card-link:hover .book-card-cover {
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .book-card-cover :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .book-card-badge {
+    position: absolute;
+    top: var(--space-2);
+    left: var(--space-2);
+  }
+
+  .book-card-body {
+    padding-top: var(--space-3);
+  }
+
+  .book-card-body h3 {
+    margin: 0;
+    font-size: var(--font-size-base);
+    font-weight: 500;
+  }
+</style>

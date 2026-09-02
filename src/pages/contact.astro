@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact" description="Get in touch with Noah Avis.">
+  <article class="prose-wrap prose contact">
+    <p class="eyebrow">Contact</p>
+    <h1>Contact</h1>
+    <p>Feel free to reach out to me through any of the channels below:</p>
+    <ul>
+      <li>
+        📧 <strong>Email:</strong>
+        <a href="mailto:na7213@princeton.edu">na7213@princeton.edu</a>
+      </li>
+      <li>
+        💼 <strong>LinkedIn:</strong>
+        <a href="https://linkedin.com/in/noahavis13" target="_blank" rel="noreferrer">
+          linkedin.com/in/noahavis13
+        </a>
+      </li>
+    </ul>
+    <p>
+      If you'd like to work together, ask a question, or learn more about
+      me, I am happy to talk.
+    </p>
+  </article>
+</BaseLayout>
+
+<style>
+  .contact {
+    padding-block: var(--space-6) var(--space-8);
+  }
+
+  .contact ul {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .contact li {
+    margin-bottom: var(--space-2);
+  }
+</style>

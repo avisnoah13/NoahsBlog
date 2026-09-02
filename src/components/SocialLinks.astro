@@ -1,0 +1,39 @@
+---
+const links = [
+  { label: 'GitHub', href: 'https://github.com/avisnoah13' },
+  { label: 'LinkedIn', href: 'https://linkedin.com/in/noahavis13' },
+  { label: 'Email', href: 'mailto:na7213@princeton.edu' },
+];
+---
+
+<ul class="social-links">
+  {
+    links.map((link) => (
+      <li>
+        <a href={link.href} target={link.href.startsWith('http') ? '_blank' : undefined} rel="noreferrer">
+          {link.label}
+        </a>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .social-links {
+    display: flex;
+    gap: var(--space-4);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .social-links a {
+    text-decoration: none;
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+  }
+
+  .social-links a:hover {
+    color: var(--color-accent);
+  }
+</style>

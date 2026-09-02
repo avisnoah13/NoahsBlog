@@ -1,1 +1,28 @@
-# Created by venv; see https://docs.python.org/3/library/venv.html
+# build output
+dist/
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
+.DS_Store
+**/.DS_Store
+
+# Windows-specific files
+Thumbs.db
+
+# jetbrains setting folder
+.idea/
