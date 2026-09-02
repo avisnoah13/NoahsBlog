@@ -85,6 +85,14 @@ const path = Astro.url.pathname;
   }
 
   @media (max-width: 560px) {
+    .header-inner {
+      flex-direction: column;
+      justify-content: center;
+      gap: var(--space-2);
+    }
+    nav {
+      gap: var(--space-3);
+    }
     nav ul {
       gap: var(--space-3);
     }
@@ -99,17 +107,21 @@ const path = Astro.url.pathname;
     background: none;
     border: 1px solid var(--color-border);
     border-radius: 999px;
-    width: 34px;
-    height: 34px;
+    padding: var(--space-1) var(--space-3);
     display: inline-flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-size: 1rem;
-    line-height: 1;
+    color: var(--color-text-muted);
+    font-family: inherit;
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    line-height: 1.6;
+    white-space: nowrap;
   }
 
   .theme-toggle:hover {
     border-color: var(--color-accent);
+    color: var(--color-accent);
   }
 </style>
