@@ -20,6 +20,7 @@ const posts = defineCollection({
           url: z.url().optional(),
         })
         .optional(),
+      comingSoon: z.boolean().optional(),
     }),
 });
 

@@ -36,6 +36,7 @@ const dateLabel = post.data.date.toLocaleDateString('en-US', {
         )}
       </Badge>
     )}
+    {post.data.comingSoon && <Badge>Coming Soon…</Badge>}
     <h1>{post.data.title}</h1>
     {post.data.heroImage && (
       <Image

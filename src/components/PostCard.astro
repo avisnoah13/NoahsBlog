@@ -32,6 +32,7 @@ const dateLabel = post.data.date.toLocaleDateString('en-US', {
     }
     <div class="post-card-body">
       {post.data.sponsor && <Badge variant="muted">Sponsored</Badge>}
+      {post.data.comingSoon && <Badge>Coming Soon…</Badge>}
       <p class="eyebrow">{dateLabel}</p>
       <h3>{post.data.title}</h3>
       <p class="post-card-summary">{post.data.summary}</p>
