@@ -47,13 +47,12 @@ const dateLabel = book.data.date.toLocaleDateString('en-US', {
 <style>
   .book-article {
     padding-block: var(--space-6) var(--space-8);
-    display: grid;
-    grid-template-columns: 160px 1fr;
-    gap: var(--space-5);
   }
 
   .book-cover {
-    grid-row: 1 / span 2;
+    width: 200px;
+    max-width: 100%;
+    margin: 0 auto var(--space-5);
     border-radius: var(--radius);
     overflow: hidden;
     box-shadow: var(--shadow-card);
@@ -61,21 +60,15 @@ const dateLabel = book.data.date.toLocaleDateString('en-US', {
 
   .book-cover :global(img) {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    display: block;
+  }
+
+  .book-meta {
+    text-align: center;
   }
 
   .book-summary {
     color: var(--color-text-muted);
-  }
-
-  .book-body {
-    grid-column: 1 / -1;
-  }
-
-  @media (max-width: 560px) {
-    .book-article {
-      grid-template-columns: 120px 1fr;
-    }
   }
 </style>
