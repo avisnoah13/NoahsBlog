@@ -28,9 +28,7 @@ const pageTitle = title === "Noah's Blog" ? title : `${title} · Noah's Blog`;
     <script is:inline>
       (function () {
         var stored = localStorage.getItem('theme');
-        var theme =
-          stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        document.documentElement.dataset.theme = theme;
+        document.documentElement.dataset.theme = stored || 'light';
       })();
     </script>
     <ClientRouter />
