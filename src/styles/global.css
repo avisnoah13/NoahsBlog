@@ -136,7 +136,11 @@ img {
 
 .prose img {
   border-radius: var(--radius);
-  margin: var(--space-4) 0;
+  margin: var(--space-4) auto;
+}
+
+.prose .caption {
+  text-align: center;
 }
 
 .prose blockquote {
